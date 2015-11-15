@@ -192,7 +192,7 @@ for trans, time in zip(transitions,times):
 
 ## Attempt decoding
 
-Write detected . and - spaced out by timing (space = 80000 samples).
+Write detected . and - spaced out by timing (space = 8000 samples).
 
 
 ```python
