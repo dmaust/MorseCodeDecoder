@@ -1087,14 +1087,14 @@ True 208
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Attempt-decoding">Attempt decoding<a class="anchor-link" href="#Attempt-decoding">&#182;</a></h2><p>Write detected . and - spaced out by timing (space = 8000 samples).</p>
+<h2 id="Attempt-decoding">Attempt decoding<a class="anchor-link" href="#Attempt-decoding">&#182;</a></h2><p>Write detected . and - spaced out by timing (space = 8000 samples). ! indicates an anomalous tone.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="n">s</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
@@ -1102,11 +1102,13 @@ True 208
     <span class="n">label</span> <span class="o">=</span> <span class="s">&#39;&#39;</span>
     <span class="k">if</span> <span class="n">trans</span> <span class="ow">and</span> <span class="n">time</span> <span class="o">&gt;</span> <span class="mi">50</span> <span class="ow">and</span> <span class="n">time</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">:</span>
         <span class="n">label</span> <span class="o">=</span> <span class="s">&#39;.&#39;</span>
-    <span class="k">if</span> <span class="n">trans</span> <span class="ow">and</span> <span class="n">time</span> <span class="o">&gt;</span> <span class="mi">190</span> <span class="ow">and</span> <span class="n">time</span> <span class="o">&lt;</span> <span class="mi">250</span><span class="p">:</span>
+    <span class="k">elif</span> <span class="n">trans</span> <span class="ow">and</span> <span class="n">time</span> <span class="o">&gt;</span> <span class="mi">190</span> <span class="ow">and</span> <span class="n">time</span> <span class="o">&lt;</span> <span class="mi">250</span><span class="p">:</span>
         <span class="n">label</span> <span class="o">=</span> <span class="s">&#39;-&#39;</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">trans</span><span class="p">:</span>
-        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">time</span><span class="o">/</span><span class="mi">80</span><span class="p">))):</span>
+    <span class="k">elif</span> <span class="ow">not</span> <span class="n">trans</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">time</span><span class="o">/</span><span class="mf">80.</span><span class="p">))):</span>
             <span class="n">s</span> <span class="o">+=</span> <span class="s">&#39; &#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">s</span> <span class="o">+=</span> <span class="s">&quot;!&quot;</span>
     <span class="n">s</span> <span class="o">+=</span> <span class="n">label</span>
     
 <span class="k">print</span> <span class="n">s</span>
@@ -1122,7 +1124,7 @@ True 208
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>       .  -   .          .    .     -     .     - . .             .            .     .   .   --     .. ..-
+<pre>        .  -   .           .     !.      -      .     -  . .             .             .      .   .!    --     . .  . . -
 </pre>
 </div>
 </div>
@@ -1137,15 +1139,13 @@ True 208
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Attemping-to-segment-into-characters">Attemping to segment into characters<a class="anchor-link" href="#Attemping-to-segment-into-characters">&#182;</a></h2>
-<pre><code>.  -   . R
-.    .     -     . F
-- . . D
-. E
-.     .   .  S
--- M
-.. I
-..- U</code></pre>
-<p>RFDESMIU</p>
+<pre><code>.  -   .  R    
+.     !.      -  U   
+.     -  . .   L      
+.  E       
+.      .   .!    -- 3  
+. .  . . - 4</code></pre>
+<p>RULE34</p>
 
 </div>
 </div>
