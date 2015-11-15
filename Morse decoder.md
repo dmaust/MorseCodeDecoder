@@ -1,4 +1,6 @@
 
+# Extract Morse Code tones from a .wav file
+
 
 ```python
 from scipy.io import wavfile
@@ -28,6 +30,8 @@ import pandas as pd
 import numpy as np
 ```
 
+## Identify the frequency with the highest amplititude on an FFT.
+
 
 ```python
 #Assume 44.1KHz sampling
@@ -51,7 +55,7 @@ None
 ```
 
 
-![png](output_7_0.png)
+![png](output_9_0.png)
 
 
 ## Label Tones as max freq between 850 Hz and 950 Hz
@@ -86,12 +90,12 @@ plot(tones)
 
 
 
-![png](output_11_1.png)
+![png](output_13_1.png)
 
 
-## Label spaces as "False"  tones as "True" 
+## Label tones and spaces 
 
-## record times for the tones and spaces
+Spaces as "False"  tones as "True". Record times corresponding to each.
 
 
 ```python
@@ -109,7 +113,7 @@ for i, tone in enumerate(tones):
     state = tone
 ```
 
-# Histogram of Tone lengths
+## Histogram of Tone lengths
 
 
 ```python
@@ -118,7 +122,7 @@ None
 ```
 
 
-![png](output_15_0.png)
+![png](output_17_0.png)
 
 
 ## Histogram of Space lengths
@@ -130,7 +134,7 @@ None
 ```
 
 
-![png](output_17_0.png)
+![png](output_19_0.png)
 
 
 ## Sequence of Tones and Spaces with their timing
@@ -208,15 +212,13 @@ for trans, time in zip(transitions,times):
             s += ' '
     s += label
     
-s
+print s
 ```
 
+           .  -   .          .    .     -     .     - . .             .            .     .   .   --     .. ..-
 
 
-
-    '       .  -   .          .    .     -     .     - . .             .            .     .   .   --     .. ..-'
-
-
+## Attemping to segment into characters
 
 ```
 .  -   . R
