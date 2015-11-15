@@ -208,7 +208,6 @@ for trans, time in zip(transitions,times):
             s += ' '
     s += label
     
-    #R EETT E SO
 s
 ```
 
