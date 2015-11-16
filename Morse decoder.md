@@ -33,7 +33,7 @@ IPython.display.Audio("morse-code.mp3")
 
 ```
 
-## Identify the frequency with the highest amplititude on an FFT.
+## Identify the frequency with the highest amplitude on an FFT.
 
 
 ```python
